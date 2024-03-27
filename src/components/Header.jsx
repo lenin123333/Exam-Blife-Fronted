@@ -19,13 +19,13 @@ export default function Header() {
 
                 <div className='flex flex-row gap-6 py-2 px-3'>
                     <div className='cursor-pointer'>
-                        <FontAwesomeIcon icon={faSearch} className="text-black text-xl w-6 h-6" />
+                        <FontAwesomeIcon icon={faSearch} className="text-black text-xl w-6 h-6 transition-transform duration-300  hover:scale-110" />
                     </div>
                     <div className='cursor-pointer'>
-                        <FontAwesomeIcon icon={faUser} className="text-black text-xl w-6 h-6" />
+                        <FontAwesomeIcon icon={faUser} className="text-black text-xl w-6 h-6 transition-transform duration-300  hover:scale-110" />
                     </div>
-                    <div className='cursor-pointer relative'>
-                        <FontAwesomeIcon icon={faShoppingBag} className="text-black text-xl w-6 h-6" />
+                    <div className='cursor-pointer relative transition-transform duration-300  hover:scale-110'>
+                        <FontAwesomeIcon icon={faShoppingBag} className="text-black text-xl w-6 h-6 " />
                         <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                             {2}
                         </span>
