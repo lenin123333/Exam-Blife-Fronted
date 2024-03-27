@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heart-icon {
+    transition: fill 0.3s ease; /* Agregamos una transición para suavizar el cambio de color al hacer hover */
+    stroke: red; /* Establecemos el contorno del icono como rojo */
+    fill: transparent !important; /* Establecemos el relleno del icono como transparente y anulamos cualquier otro estilo de relleno */
+  }
+  
+  .heart-icon:hover {
+    fill: red; /* Cuando se hace hover sobre el icono, se rellena de rojo */
+  }
+  
