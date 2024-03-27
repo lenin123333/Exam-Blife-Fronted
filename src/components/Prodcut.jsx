@@ -5,6 +5,7 @@ import { formatCurrency } from "../helpers";
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Prodcut({ product }) {
   const { name, image, description, price, descuento, priceFinal, reaction } = product
@@ -20,12 +21,12 @@ export default function Prodcut({ product }) {
   return (
     <div className="flex flex-col relative ">
       <div className="relative">
-        <div className="absolute top-6 -right-5 z-30 border-gray-200 border rounded-full
+        <motion.div whileTap={{ scale: 0.9 }} className="absolute top-6 -right-5 z-30 border-gray-200 border rounded-full
          bg-white shadow-xl w-14 flex justify-center"
          onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <FontAwesomeIcon icon={isHovered ? fasHeart : farHeart} className="p-1 w-4 h-4 heart-icon text-red-500 cursor-pointer text-xl" />
           <p className="text-xs px-1 font-bold p-1">{reaction}</p>
-        </div>
+        </motion.div>
         <div className="absolute top-14 -right-5 z-30 rounded-full bg-red-300 shadow-xl w-14 flex justify-center">
           <p className="text-xs px-1 font-bold text-white p-1">{descuento}</p>
         </div>
@@ -64,7 +65,7 @@ export default function Prodcut({ product }) {
             <FontAwesomeIcon icon={faInstagram} className="hover:text-purple-500 mr-2 cursor-pointer" />
           </div>
         </div>
-        <button className="px-5 py-1 text-xs font-bold border border-yellow-500 rounded-xl hover:bg-yellow-500 hover:text-white">Agregar</button>
+        <motion.button  whileTap={{ scale: 0.9 }} className="px-5 py-1 text-xs font-bold border border-yellow-500 rounded-xl hover:bg-yellow-500 hover:text-white">Agregar</motion.button>
       </div>
     </div>
   )
