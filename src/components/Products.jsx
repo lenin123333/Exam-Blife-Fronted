@@ -1,11 +1,12 @@
 import { db } from "../data/db"
 import Prodcut from "./Prodcut"
-export default function Products() {
+export default function Products({dispatch}) {
   return (
     <main className="flex flex-row p-10 space-x-14 justify-center">
       {
         db.map(product=>(
-          <Prodcut key={product.id} product={product}/>
+          <Prodcut key={product.id} product={product} 
+          dispatch={dispatch} />
         ))
       }
     </main>
