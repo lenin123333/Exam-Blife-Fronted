@@ -26,8 +26,7 @@ export default function Prodcut({ product, dispatch }) {
       <div className="relative">
         <motion.div whileHover={{ scale: 1.1 }} className="absolute top-6 -right-5 z-30 border-gray-200 border rounded-full
          bg-white shadow-xl w-14 flex justify-center"
-          onClick={handleButton}
-        >
+          onClick={handleButton}>
           <FontAwesomeIcon icon={isHovered ? fasHeart : farHeart} className="p-1 w-4 h-4 heart-icon text-red-500 cursor-pointer text-xl" />
           <p className="text-xs px-1 font-bold p-1">{reaction}</p>
         </motion.div>
@@ -37,7 +36,7 @@ export default function Prodcut({ product, dispatch }) {
       </div>
       <div className="border border-gray-300 rounded-xl bg-white shadow-sm relative overflow-hidden z-20">
         <motion.div key={numImage} className="relative">
-          <motion.img whileHover={{ scale: 1.1 }} initial={{ opacity: 0 }} // Animación de entrada
+          <motion.img whileHover={{ scale: 1.1 }} initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }} className="img-fluid m-auto" src={`/img/${image[numImage]}.webp`} width='280px' alt="imagen guitarra" />
           <div className="absolute bottom-2 left-0 right-0 flex justify-center  m-auto border w-20 h-8 rounded-full shadow-lg  bg-white">
@@ -64,7 +63,8 @@ export default function Prodcut({ product, dispatch }) {
           <Stars numStars={3.5} />
         </div>
       </div>
-      <div className="border pt-10 border-gray-300 p-4 flex rounded-xl items-center justify-between bg-gray-100 shadow-md -mt-8 z-0">
+      <div className="border pt-10 border-gray-300 p-4 flex rounded-xl items-center 
+            justify-between bg-gray-100 shadow-md -mt-8 z-0">
         <div>
           <p className="text-sm font-bold">Comparte</p>
           <div>
@@ -73,7 +73,11 @@ export default function Prodcut({ product, dispatch }) {
             <FontAwesomeIcon icon={faInstagram} className="hover:text-purple-500 mr-2 cursor-pointer" />
           </div>
         </div>
-        <motion.button onClick={() => dispatch({ type: 'add-to-cart', payload: { product } })} whileTap={{ scale: 0.9 }} className="px-5 py-1 text-xs font-bold border border-yellow-500 rounded-xl hover:bg-yellow-500 hover:text-white">Agregar</motion.button>
+        <motion.button 
+          onClick={() => dispatch({ type: 'add-to-cart', payload: { product } })} 
+          whileTap={{ scale: 0.9 }} 
+          className="px-5 py-1 text-xs font-bold border border-yellow-500 rounded-xl
+           hover:bg-yellow-500 hover:text-white">Agregar</motion.button>
       </div>
     </div>
   )

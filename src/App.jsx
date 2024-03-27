@@ -12,8 +12,7 @@ function App() {
 
   return (
     <>
-     <Header cart={state.cart}
-        dispatch={dispatch} />
+     <Header cart={state.cart}dispatch={dispatch} />
      <Products  dispatch={dispatch}/>
     </>
   )

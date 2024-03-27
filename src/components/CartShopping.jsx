@@ -8,10 +8,10 @@ export default function CartShopping({ dispatch, cart }) {
     const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
     return (
         <>
-            <h2 className=' text-xl font-bold'>Carrito de Compras</h2>
+            <h2 className=' text-xl font-bold m-2'>Carrito de Compras</h2>
             {cart.map(product => (
                 <div key={product.id}
-                    className='flex flex-row'>
+                    className='flex flex-row justify-center '>
                     <motion.img
                         whileHover={{ scale: 1.1 }}
                         className="img-fluid w-1/3"
@@ -20,7 +20,7 @@ export default function CartShopping({ dispatch, cart }) {
                     />
                     <div>
                         <p>{product.name}</p>
-                        <p>{product.description}</p>
+                        <p className=' text-xs text-gray-400'>{product.description}</p>
                         <p>{formatCurrency(product.price)}</p>
                         <div>
                             <motion.button
@@ -44,7 +44,7 @@ export default function CartShopping({ dispatch, cart }) {
                     </div>
                     <motion.button
                         whileTap={{ scale: 0.9 }}
-                        className=" bg-red-700 relative top-0 right-0 text-white text-xs rounded-full h-5 w-5"
+                        className=" bg-red-700  text-white text-xs rounded-full h-5 w-5"
                         type="button"
                         onClick={() => dispatch({ type: 'remove-from-cart', payload: { id: product.id } })}
                     >

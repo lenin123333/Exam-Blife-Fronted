@@ -9,7 +9,6 @@ import CartShopping from './CartShopping';
 
 export default function Header({ cart, dispatch }) {
     const [isHovered, setIsHovered] = useState(false);
-    // State Derivado
     const isEmpty = useMemo(() => cart.length === 0, [cart])
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -54,12 +53,12 @@ export default function Header({ cart, dispatch }) {
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.8 }}
-                                    transition={{ duration: 0.3 }} id="carrito" 
-                                    className="bg-white p-3 absolute top-full right-0 z-20">
+                                    transition={{ duration: 0.3 }} id="carrito"
+                                    className="bg-white p-3 shadow-2xl rounded-lg absolute -top-2 right-0 z-20">
                                     {isEmpty ? (
                                         <p className="text-center">El carrito esta vacio</p>
                                     ) : (
-                                        <CartShopping dispatch={dispatch} cart={cart}/>
+                                        <CartShopping dispatch={dispatch} cart={cart} />
                                     )}
                                 </motion.div>
                             )}
@@ -67,8 +66,8 @@ export default function Header({ cart, dispatch }) {
                     </div>
                 </div>
             </header>
-            <section className="bg-cover bg-center bg-no-repeat relative z-0" 
-                style={{ backgroundImage:`url(${banner})`,backgroundSize: '100%',height:'540px'}}>
+            <section className="bg-cover bg-center bg-no-repeat relative z-0"
+                style={{ backgroundImage: `url(${banner})`, backgroundSize: '100%', height: '540px' }}>
                 <div className='absolute top-0 right-20 bottom-0 flex w-1/3 p-5 items-center'>
                     <div className='w-full'>
                         <img src={logoDes} alt="" />

@@ -20,10 +20,10 @@ export const cartReducer = (
     ) => {
 
     if(action.type === "add-to-cart" ) {
-        
         const itemExists = state.cart.find(product => product.id === action.payload.product.id)
         let updatedCart = []
-        if (itemExists) { // item exists in the cart
+        if (itemExists) { 
+            // item exists in the cart
             updatedCart = state.cart.map(item => {
                 if(item.id === action.payload.product.id) {
                     if(item.quantity < MAX_ITEMS) {
