@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import logo from '../assets/Group.png'
 import banner from '../assets/Banner.png'
 import logoDes from '../assets/Rectangle.png'
@@ -8,8 +9,11 @@ import { useMemo, useState } from 'react';
 import CartShopping from './CartShopping';
 
 export default function Header({ cart, dispatch }) {
+    //Detectamos el estado para saber cuando le hacemos un hover al carrito
     const [isHovered, setIsHovered] = useState(false);
+    //Verficio si esta vacio o no el carrito que le pase en los props
     const isEmpty = useMemo(() => cart.length === 0, [cart])
+    //Las funciones para detectar el mouse
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
@@ -38,17 +42,21 @@ export default function Header({ cart, dispatch }) {
                     <div
                         className='carrito cursor-pointer relative transition-transform duration-300  
                         hover:scale-110'
+                        //Se llaman las funciones para el detectar el mouse
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <FontAwesomeIcon icon={faShoppingBag} className="text-black text-xl w-6 
-                        h-6"/>
+                        <FontAwesomeIcon icon={faShoppingBag} 
+                                className="text-black text-xl w-6 h-6"/>
                         <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs
                          rounded-full h-4 w-4 flex items-center justify-center">
                             {cart.length}
                         </span>
+                        {/*Agrego para detectar que hay una animacion*/}    
                         <AnimatePresence>
                             {isHovered && (
+                                //Si hacemos un hover en el div donde esta el icono de tienda
+                                //Se habilita la animacion de mostrar el carrito
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
